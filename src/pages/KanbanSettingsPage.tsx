@@ -51,6 +51,7 @@ export const KanbanSettingsPage: React.FC = () => {
                     value={value.label}
                     onChange={(e) => handleLabelChange(index, e.target.value)}
                   />
+                  <p className="text-xs text-gray-500 mt-1">Key: <code>{key}</code></p>
                 </div>
                 
                 <div className="w-48">
