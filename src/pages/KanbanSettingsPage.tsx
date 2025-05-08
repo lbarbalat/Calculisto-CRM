@@ -102,16 +102,25 @@ export const KanbanSettingsPage: React.FC = () => {
           <h2 className="text-lg font-medium mb-4">Preview</h2>
           <div className="flex space-x-4">
             {stages.map(([key, value]) => (
-              <div key={key} className="w-64">
-                <div className={`${value.color} text-white px-4 py-2 rounded-t-lg flex justify-between items-center`}>
-                  <span>{value.label}</span>
-                  <span className="text-sm bg-white bg-opacity-20 px-2 py-0.5 rounded">
-                    0 cards
-                  </span>
-                </div>
-              <div className="bg-gray-100 h-32 rounded-b-lg"></div>
-           </div>
-            ))}
+      <div key={key} className="w-64">
+        {/* Status name above the column */}
+        <div className="mb-1 text-sm font-semibold text-gray-700 text-center">
+          {value.label}
+        </div>
+    
+        {/* Colored bar */}
+        <div className={`${value.color} text-white px-4 py-2 rounded-t-lg flex justify-between items-center`}>
+          <span>Status</span> {/* Optional: can leave empty or use an icon */}
+          <span className="text-sm bg-white bg-opacity-20 px-2 py-0.5 rounded">
+            0 cards
+          </span>
+        </div>
+    
+        {/* Placeholder for cards */}
+        <div className="bg-gray-100 h-32 rounded-b-lg"></div>
+      </div>
+    ))}
+
           </div>
         </CardBody>
       </Card>
